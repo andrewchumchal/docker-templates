@@ -12,7 +12,6 @@
   <Support></Support>
   <Description> [br]
   [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-  [b]/config[/b] : Mapping for config files [br]
   </Description>
  <Project>http://www.neorouter.com/</Project>
   <Overview></Overview>
@@ -22,11 +21,11 @@
   <Privileged>false</Privileged>
   <Network Default="bridge">bridge</Network>  
   <Config Name="Domain Name" Targer="PUID" Default="" Mode="" Description="Set NeoRouter Doamin Name"
-Type="Variable Display="always" Required="true" Mask="false"></config>
+Type="Variable" Display="always" Required="true" Mask="false"></config>
   <Config Name="User Name" Targer="PUID" Default="" Mode="" Description="Set NeoRouter User Name"
-Type="Variable Display="always" Required="true" Mask="false"></config>
+Type="Variable" Display="always" Required="true" Mask="false"></config>
   <Config Name="Password" Targer="PUID" Default="" Mode="" Description="Set NeoRouter password"
-Type="Variable Display="always" Required="true" Mask="true"></config>
+Type="Variable" Display="always" Required="true" Mask="true"></config>
   
 
 
