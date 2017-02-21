@@ -1,26 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container>
-  <Beta>True</Beta>
-  <Category></Category>
-  <!-- Date in format YYYY-MM-DD  -->
-  <Date></Date>
-  <Changes>
-  [b]23.11.2016:[/b] Initial Release. 
-  </Changes>
-<!-- name preferably in lowercase  -->
-  <Name>neorouter</Name>
-  <Support></Support>
-  <Description> [br]
-  [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-  </Description>
- <Project>http://www.neorouter.com/</Project>
-  <Overview></Overview>
-  <Registry>https://hub.docker.com/r/andrewchumchal/neorouter/</Registry>
-  <Repository>andrewchumchal/neorouter</Repository>
-  <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
-  <Network Default="bridge">bridge</Network>  
-<WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <Banner></Banner>
-  <Icon></Icon>
-</Container>
+<Containers>
+	<Beta>True</Beta>
+	<Category>Network:VPN</Category>
+	<Name>Neo Router</Name>
+	<Description>
+	
+	</Description>
+	<Overview>
+	NeoRouter is the ideal remote-access and VPN solution for homes and small businesses
+	</Overview>
+	<Support>link here</Support>
+	<Registry>https://registry.hub.docker.com/u/andrewchumchal/neorouter/</Registry>
+	<GitHub>https://github.com/andrewchumchal/docker-containers/tree/master/neorouter</GitHub>
+	<Repository>andrewchumchal/neorouter</Repository>
+	<BindTime>False</BindTime>
+	<Privileged>false</Privileged>
+		<Networking>
+		<Mode>bridge</Mode>
+		<Publish>
+			<Port>
+				<HostPort></HostPort>
+				<ContainerPort></ContainerPort>
+				<Protocol></Protocol>
+			</Port>
+		</Publish>
+		</Networking>
+	<Environment>
+		<Variable>
+		<Name></Name>
+		<Value></Value>
+		</Variable>
+	</Environment>  
+	<Data>
+		<Volume>
+		<HostDir></HostDir>
+		<ContainerDir>/config</ContainerDir>
+		<Mode>rw</Mode>
+		</Volume>
+	</Data>
+	<WebUI></WebUI>
+	<Banner></Banner>
+	<Icon></Icon>
+</Containers>
+	
