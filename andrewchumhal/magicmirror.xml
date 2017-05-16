@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2017-05-16</Date>
+  <Beta>True</Beta>
+  <Category>HomeAutomation: Network:Web</Category>
+  <Name>Magic Mirror</Name>
+  <Project>https://github.com/MichMich/MagicMirror</Project>
+  <Changes>
+[font size=3]2017.05.17[/font]
+- Initial Release
+  </Changes>
+  <Overview>
+    MagicMirror² focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!  </Overview>
+  <Description>
+    MagicMirror² is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant. MagicMirror² is built by the creator of the original MagicMirror with the incredible help of a growing community of contributors.[br][br]
+    [b][span style='color: #E80000;']Directions:[/span][/b][br]
+    [b]/config[/b] : this is where MagicMirror will store it's configuration.[br][br]
+	[b]/modules[/b] : this is where MagicMirror will store it's modules. [br] [br]
+    [b]Tip:[/b] You can add more volume mappings if you wish MagicMirror has access to it.
+  </Description>
+  <Registry>https://hub.docker.com/r/andrewchumchal/magicmirror/</Registry>
+  <GitHub>https://github.com/MichMich/MagicMirror</GitHub>
+  <Repository>andrewchumchal/magicmirror</Repository>
+  <Support>https://github.com/MichMich/MagicMirror</Support>
+  <BindTime>true</BindTime>
+  <Privileged>true</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Environment/>
+  <Data>
+    <Volume>
+      <HostDir>~/magic_mirror/config:/opt/magic_mirror/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+	<Volume>
+	  <HostDir>~/magic_mirror/modules:/opt/magic_mirror/modules</HostDir>
+      <ContainerDir>/modules</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <Banner></Banner>
+  <Icon>http://d2631fvi2jdnb6.cloudfront.net/docker/limetech/plex.png</Icon>
+</Containers>
