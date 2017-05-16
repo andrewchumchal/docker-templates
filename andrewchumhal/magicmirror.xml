@@ -10,9 +10,9 @@
 - Initial Release
   </Changes>
   <Overview>
-    MagicMirror² focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!  </Overview>
+    MagicMirror focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!  </Overview>
   <Description>
-    MagicMirror² is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant. MagicMirror² is built by the creator of the original MagicMirror with the incredible help of a growing community of contributors.[br][br]
+    MagicMirror is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant. MagicMirror² is built by the creator of the original MagicMirror with the incredible help of a growing community of contributors.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br]
     [b]/config[/b] : this is where MagicMirror will store it's configuration.[br][br]
 	[b]/modules[/b] : this is where MagicMirror will store it's modules. [br] [br]
