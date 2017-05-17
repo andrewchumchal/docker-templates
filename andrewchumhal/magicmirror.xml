@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
-  <Date>2017-05-16</Date>
+  <Date>2017-05-13</Date>
   <Beta>True</Beta>
   <Category>HomeAutomation: Network:Web</Category>
   <Name>Magic Mirror</Name>
@@ -10,38 +10,41 @@
 - Initial Release
   </Changes>
   <Overview>
-    MagicMirror focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!  </Overview>
+  MagicMirror focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!
+  </Overview>
   <Description>
-    MagicMirror is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant. MagicMirror² is built by the creator of the original MagicMirror with the incredible help of a growing community of contributors.[br][br]
-    [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    [b]/config[/b] : this is where MagicMirror will store it's configuration.[br][br]
-	[b]/modules[/b] : this is where MagicMirror will store it's modules. [br] [br]
-    [b]Tip:[/b] You can add more volume mappings if you wish MagicMirror has access to it.
+  
   </Description>
-  <Registry>https://hub.docker.com/r/andrewchumchal/magicmirror/</Registry>
-  <GitHub>https://github.com/MichMich/MagicMirror</GitHub>
-  <Repository>andrewchumchal/magicmirror</Repository>
+  <Registry>https://hub.docker.com/r/bastilimbach/docker-magicmirror</Registry>
+  <Github>https://github.com/MichMich/MagicMirror</Github>
+  <Repository>bastilimbach/docker-magicmirror</Repository>
   <Support>https://github.com/MichMich/MagicMirror</Support>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
   <Networking>
-    <Mode>host</Mode>
-    <Publish/>
+    <mode>host</mode>
+    <Publish>
+      <Port>
+        <HostPort>8082</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+    
   </Networking>
   <Environment/>
   <Data>
     <Volume>
-      <HostDir>~/magic_mirror/config:/opt/magic_mirror/config</HostDir>
-      <ContainerDir>/config</ContainerDir>
-      <Mode>rw</Mode>
+    <HostDir>/mnt/user/appdata/MagicMirror/config</HostDir>
+    <ContainerDir>/config</ContainerDir>
+    <mode>rw</mode>
     </Volume>
-	<Volume>
-	  <HostDir>~/magic_mirror/modules:/opt/magic_mirror/modules</HostDir>
-      <ContainerDir>/modules</ContainerDir>
-      <Mode>rw</Mode>
+    <Volume>
+    <HostDir>/mnt/user/appdata/MagicMirror/modules</HostDir>
+    <ContainerDir>/modules</ContainerDir>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <WebUI>http://[IP]:[PORT:8082]</WebUI>
   <Banner></Banner>
-  <Icon>http://d2631fvi2jdnb6.cloudfront.net/docker/limetech/plex.png</Icon>
+  <Icon></Icon>
 </Containers>
