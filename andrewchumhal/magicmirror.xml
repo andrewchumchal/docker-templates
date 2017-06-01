@@ -13,7 +13,7 @@
   MagicMirror focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!
   </Overview>
   <Description>
-  
+  MagicMirror is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant. MagicMirror² is built by the creator of the original MagicMirror with the incredible help of a growing community of contributors. [br][br]
   </Description>
   <Registry>https://hub.docker.com/r/bastilimbach/docker-magicmirror</Registry>
   <Github>https://github.com/MichMich/MagicMirror</Github>
@@ -45,6 +45,6 @@
     </Volume>
   </Data>
   <WebUI>http://[IP]:[PORT:8082]</WebUI>
-  <Banner></Banner>
+  <Banner>https://raw.githubusercontent.com/MichMich/MagicMirror/master/.github/header.png</Banner>
   <Icon></Icon>
 </Containers>
