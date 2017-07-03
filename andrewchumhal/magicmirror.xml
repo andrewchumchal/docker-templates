@@ -1,50 +1,43 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Containers>
-  <Date>2017-05-13</Date>
-  <Beta>True</Beta>
-  <Category>HomeAutomation: Network:Web</Category>
-  <Name>Magic Mirror</Name>
-  <Project>https://github.com/MichMich/MagicMirror</Project>
-  <Changes>
-[font size=3]2017.05.17[/font]
-- Initial Release
-  </Changes>
-  <Overview>
-  MagicMirror focuses on a modular plugin system and uses Electron as an application wrapper. So no more web server or browser installs necessary!
-  </Overview>
-  <Description>
-  MagicMirror is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror² allows you to convert your hallway or bathroom mirror into your personal assistant. MagicMirror² is built by the creator of the original MagicMirror with the incredible help of a growing community of contributors. [br][br]
-  </Description>
-  <Registry>https://hub.docker.com/r/bastilimbach/docker-magicmirror</Registry>
-  <Github>https://github.com/MichMich/MagicMirror</Github>
+<?xml version="1.0"?>
+<Container version="1">
+  <Name>MagicMirro</Name>
   <Repository>bastilimbach/docker-magicmirror</Repository>
-  <Support>https://github.com/MichMich/MagicMirror</Support>
-  <BindTime>true</BindTime>
-  <Privileged>true</Privileged>
+  <Beta>True</Beta>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+    <Overview> MagicMirror is an open source modular smart mirror platform. With a growing list of installable modules, the MagicMirror allows you to convert your hallway or bathroom mirror into your personal assistant.</Overview>
+    <Category>Network:Web</Category>
+    <WebUI>http://[IP]:[PORT:8080]</WebUI>
+    <TemplateURL>https://github.com/andrewchumchal/docker-templates/blob/master/andrewchumhal/magicmirror.xml</TemplateURL>
+    <Icon>https://magicmirror.builders/img/magpi-best-watermark-custom.png</Icon>
+  <ExtraParams/>
+    <DateInstalled>1459254872</DateInstalled>
+    <Description>MagicMirror is Open Source, free and maintained by a big group of enthusiasts. Got a nice idea? Send us a pull request and become a part of the big list of contributors.</Description>
   <Networking>
-    <mode>host</mode>
+    <Mode>host</Mode>
     <Publish>
       <Port>
-        <HostPort>8082</HostPort>
+        <HostPort>8080</HostPort>
         <ContainerPort>8080</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
-    
   </Networking>
-  <Environment/>
   <Data>
     <Volume>
-    <HostDir>/mnt/user/appdata/MagicMirror/config</HostDir>
-    <ContainerDir>/config</ContainerDir>
-    <mode>rw</mode>
+      <HostDir>~/magic_mirror/config:/opt/magic_mirror/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
     </Volume>
     <Volume>
-    <HostDir>/mnt/user/appdata/MagicMirror/modules</HostDir>
-    <ContainerDir>/modules</ContainerDir>
+      <HostDir>~/magic_mirror/modules:/opt/magic_mirror/modules</HostDir>
+      <ContainerDir>/modules</ContainerDir>
+      <Mode>re</Mode>
     </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:8082]</WebUI>
-  <Banner>https://raw.githubusercontent.com/MichMich/MagicMirror/master/.github/header.png</Banner>
-  <Icon></Icon>
-</Containers>
+  <Enviroment/>
+  <Config Name="Config Directory" Target="/config" Defualt="~/magic_mirror/config:/opt/magic_mirror/config" Mode="rw" Description="In this directory, MagicMirror will store it's configuration files" Type="Path" Display="always-hide" Required="true" Mask="false"></Config>
+  <Config Name="Config Directory" Target="/modules" Defualt="~/magic_mirror/modules:/opt/magic_mirror/modules" Mode="rw" Description="In this directory, MagicMirror will store it's modules files" Type="Path" Display="always-hide" Required="true" Mask="false"></Config>
+  <Config Name="WebUI Port" Target="8080" Defualt="8080" Mode="tcp" Description="This is MagicMirror WebUI Port" Type="Port" Display="advanced-hide" Required="true" Mask="false"></Config>
+  </Container>
