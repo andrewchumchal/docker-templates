@@ -1,46 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Container version="2">
-    <Privileged>false</Privileged>
-    <Beta>True</Beta>
-    <Category>Network:Web</Category>
-    <Name>Ghost</Name>
-    <Description>
+  <Name>Ghost Blog</Name>
+  <Repository>homeassistant/amd64-hassio-supervisor</Repository>
+  <Registry>https://hub.docker.com/_/ghost/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://forums.unraid.net/topic/72033-support-digiblurs-docker-template-repository/</Support>
+  <Project/>
+  <Overview>
     Ghost is a fully open source, adaptable platform for building and running a modern online publication.
-    </Description>
-    <Overview>
+  </Overview>
+  <Beta>True</Beta>
+  <Category>Network:Web Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:2386]</WebUI>
+  <TemplateURL>https://github.com/andrewchumchal/docker-templates/blob/master/andrewchumhal/ghost.xml<TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/andrewchumchal/docker-templates/master/images/Ghost.png</Icon>
+  </ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>
     Ghost is a fully open source, adaptable platform for building and running a modern online publication.
-    </Overview>
-    <Support>https://github.com/andrewchumchal/docker-templates/issues</Support>
-    <Registry>https://hub.docker.com/_/ghost/</Registry>
-    <GitHub>https://github.com/TryGhost/Ghost</GitHub>
-    <Project>https://docs.ghost.org/docs</Project>
-    <Repository>ghost</Repository>
-    <Network>bridge</Network>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>2368</HostPort>
-                <ContainerPort>2368</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
-    <Environment>
-        <Variable>
-            <Value>http://localhost:2368</Value>
-            <Name>url</Name>
-        </Variable>
-    </Environment>
-    <Data>
-        <Volume>
-            <HostDir>/mnt/user/appdata/ghost</HostDir>
-            <ContainerDir>/var/lib/ghost/content</ContainerDir>
-            <Mode>rw</Mode>
-        </Volume>
-    </Data>
-    <WebUI>http://[IP]:[PORT:2368]</WebUI>
-    <Icon>https://raw.githubusercontent.com/andrewchumchal/docker-templates/master/images/Ghost.png</Icon>
-    <Config Name="Appdata Location" Target="/var/lib/ghost/content" Default="/mnt/user/appdata/ghost" Mode="rw" Description="Container Path: /var/lib/ghost" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/ghost</Config>
-    <Config Name="Web" Target="2368" Default="2368" Mode="tcp" Description="Web port for Ghost" Type="Port" Display="advanced" Required="true" Mask="false">2368</Config>
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+          <HostPort>2368</HostPort>
+          <ContainerPort>2368</ContainerPort>
+          <Protocol>tcp</Protocol>
+      </Port>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ghost/</HostDir>
+      <ContainerDir>/var/lib/ghost/content</ContainerDir>
+      <Mode>rw</Mode>
+      <Name>Web<Name/>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>/mnt/user/appdata/ghost/</Value>
+      <Name>Appdata Location</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>http://localhost:2368</Value>
+      <Name>URL</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Appdata Location" Target="/var/lib/ghost/content" Default="/mnt/user/appdata/ghost" Mode="rw" Description="Container Path: /var/lib/ghost" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/ghost</Config>
+   <Config Name="URL" Target="url" Default="" Mode="" Description="Site URL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Web" Target="2368" Default="2368" Mode="tcp" Description="Web port for Ghost" Type="Port" Display="advanced" Required="true" Mask="false">2368</Config>
 </Container>
