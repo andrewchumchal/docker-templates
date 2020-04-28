@@ -26,16 +26,12 @@
             </Port>
         </Publish>
     </Networking>
-<Environment>
-    <Variable>
-      <Value>http://localhost:2368</Value>
-      <Name>url</Name>
-    </Variable>
-    <Variable>
-      <Name>PLEX_CLAIM</Name>
-      <Value>Insert Token from https://plex.tv/claim</Value>
-    </Variable>
-  </Environment>
+    <Environment>
+        <Variable>
+            <Value>http://localhost:2368</Value>
+            <Name>url</Name>
+        </Variable>
+    </Environment>
     <Data>
         <Volume>
             <HostDir>/mnt/user/appdata/ghost</HostDir>
