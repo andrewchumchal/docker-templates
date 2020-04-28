@@ -1,54 +1,45 @@
-<?xml version="1.0"?>
-<Container version="2">
-  <Name>Ghost Blog</Name>
-  <Repository>homeassistant/amd64-hassio-supervisor</Repository>
-  <Registry>https://hub.docker.com/_/ghost/</Registry>
-  <Network>bridge</Network>
-  <Shell>sh</Shell>
-  <Privileged>false</Privileged>
-  <Support>https://forums.unraid.net/topic/72033-support-digiblurs-docker-template-repository/</Support>
-  <Overview>
-    Ghost is a fully open source, adaptable platform for building and running a modern online publication.
-  </Overview>
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <TemplateURL>https://github.com/andrewchumchal/docker-templates/blob/master/andrewchumhal/ghost.xml</TemplateURL>
   <Beta>True</Beta>
   <Category>Network:Web Network:Other</Category>
-  <WebUI>http://[IP]:[PORT:2386]</WebUI>
-  <TemplateURL>https://github.com/andrewchumchal/docker-templates/blob/master/andrewchumhal/ghost.xml<TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/andrewchumchal/docker-templates/master/images/Ghost.png</Icon>
+  <Name>Ghost Blog</Name>
   <Description>
     Ghost is a fully open source, adaptable platform for building and running a modern online publication.
   </Description>
-  <Networking>
+  <Overview>
+    Ghost is a fully open source, adaptable platform for building and running a modern online publication.
+  </Overview>
+  <Registry>https://hub.docker.com/_/ghost/</Registry>
+  <GitHub>https://github.com/TryGhost/Ghost</GitHub>
+  <Repository>ghost</Repository>
+  <Project>https://docs.ghost.org/docs</Project>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+    <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-          <HostPort>2368</HostPort>
-          <ContainerPort>2368</ContainerPort>
-          <Protocol>tcp</Protocol>
+        <HostPort>2368</HostPort>
+        <ContainerPort>2368</ContainerPort>
+        <Protocol>tcp</Protocol>
       </Port>
-    <Publish/>
+    </Publish>
   </Networking>
-  <Data>
-    <Volume>
-      <HostDir>/mnt/user/appdata/ghost/</HostDir>
-      <ContainerDir>/var/lib/ghost/content</ContainerDir>
-      <Mode>rw</Mode>
-      <Name>Web<Name/>
-    </Volume>
-  </Data>
   <Environment>
     <Variable>
-      <Value>/mnt/user/appdata/ghost/</Value>
-      <Name>Appdata Location</Name>
-      <Mode/>
-    </Variable>
-    <Variable>
+      <Name>url</Name>
       <Value>http://localhost:2368</Value>
-      <Name>URL</Name>
-      <Mode/>
     </Variable>
   </Environment>
-  <Config Name="Appdata Location" Target="/var/lib/ghost/content" Default="/mnt/user/appdata/ghost" Mode="rw" Description="Container Path: /var/lib/ghost" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/ghost</Config>
-  <Config Name="URL" Target="url" Default="" Mode="" Description="Site URL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="Web" Target="2368" Default="2368" Mode="tcp" Description="Web port for Ghost" Type="Port" Display="advanced" Required="true" Mask="false">2368</Config>
-</Container>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/ghost</HostDir>
+      <ContainerDir>/var/lib/ghost/content</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:2386]</WebUI>
+  <Icon>https://raw.githubusercontent.com/andrewchumchal/docker-templates/master/images/Ghost.png</Icon>
+  <ExtraParams></ExtraParams>
+</Containers>
