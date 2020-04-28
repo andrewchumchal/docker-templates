@@ -31,6 +31,10 @@
       <Value>http://localhost:2368</Value>
       <Name>url</Name>
     </Variable>
+    <Variable>
+      <Name>PLEX_CLAIM</Name>
+      <Value>Insert Token from https://plex.tv/claim</Value>
+    </Variable>
   </Environment>
     <Data>
         <Volume>
