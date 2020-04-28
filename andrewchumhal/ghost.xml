@@ -4,11 +4,9 @@
   <Repository>homeassistant/amd64-hassio-supervisor</Repository>
   <Registry>https://hub.docker.com/_/ghost/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/72033-support-digiblurs-docker-template-repository/</Support>
-  <Project/>
   <Overview>
     Ghost is a fully open source, adaptable platform for building and running a modern online publication.
   </Overview>
@@ -17,11 +15,6 @@
   <WebUI>http://[IP]:[PORT:2386]</WebUI>
   <TemplateURL>https://github.com/andrewchumchal/docker-templates/blob/master/andrewchumhal/ghost.xml<TemplateURL/>
   <Icon>https://raw.githubusercontent.com/andrewchumchal/docker-templates/master/images/Ghost.png</Icon>
-  </ExtraParams>
-  <PostArgs/>
-  <CPUset/>
-  <DonateText/>
-  <DonateLink/>
   <Description>
     Ghost is a fully open source, adaptable platform for building and running a modern online publication.
   </Description>
@@ -55,8 +48,7 @@
       <Mode/>
     </Variable>
   </Environment>
-  <Labels/>
   <Config Name="Appdata Location" Target="/var/lib/ghost/content" Default="/mnt/user/appdata/ghost" Mode="rw" Description="Container Path: /var/lib/ghost" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/ghost</Config>
-   <Config Name="URL" Target="url" Default="" Mode="" Description="Site URL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="URL" Target="url" Default="" Mode="" Description="Site URL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Web" Target="2368" Default="2368" Mode="tcp" Description="Web port for Ghost" Type="Port" Display="advanced" Required="true" Mask="false">2368</Config>
 </Container>
