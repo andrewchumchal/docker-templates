@@ -30,7 +30,6 @@
     <Variable>
       <Value>http://localhost:2368</Value>
       <Name>url</Name>
-      <Mode/>
     </Variable>
   </Environment>
     <Data>
