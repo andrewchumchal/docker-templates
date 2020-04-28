@@ -29,8 +29,36 @@
   </Networking>
   <Environment>
     <Variable>
-      <Name>URL</Name>
+      <Name>url</Name>
       <Value>http://localhost:2368</Value>
+    </Variable>
+    <Variable>
+      <Name>mail__transport</Name>
+      <Value>smtp</Value>
+    </Variable>
+    <Variable>
+      <Name>mail__from</Name>
+      <Value>example@example.com</Value>
+    </Variable>
+    <Variable>
+      <Name> mail__options__service</Name>
+      <Value>SMTP</Value>
+    </Variable>
+    <Variable>
+      <Name>mail__options__host</Name>
+      <Value>mail.smtp2go.com</Value>
+    </Variable>
+    <Variable>
+      <Name>mail__options__port</Name>
+      <Value>2525</Value>
+    </Variable>
+    <Variable>
+      <Name>mail__options__auth__user</Name>
+      <Value>username</Value>
+    </Variable>
+    <Variable>
+      <Name>mail__options__auth__pass</Name>
+      <Value>password</Value>
     </Variable>
   </Environment>
   <Data>
