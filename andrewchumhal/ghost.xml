@@ -35,22 +35,27 @@
     <Variable>
       <Name>mail__transport</Name>
       <Value>smtp</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name>mail__from</Name>
       <Value>example@example.com</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name> mail__options__service</Name>
       <Value>SMTP</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name>mail__options__host</Name>
       <Value>mail.smtp2go.com</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name>mail__options__port</Name>
       <Value>2525</Value>
+      <Mode/>
     </Variable>
     <Variable>
       <Name>mail__options__auth__user</Name>
@@ -59,6 +64,7 @@
     <Variable>
       <Name>mail__options__auth__pass</Name>
       <Value>password</Value>
+      <Mode/>
     </Variable>
   </Environment>
   <Data>
