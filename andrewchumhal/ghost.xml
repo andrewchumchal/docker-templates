@@ -20,6 +20,7 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
+        <Name>WebUI Port</Name>
         <HostPort>2368</HostPort>
         <ContainerPort>2368</ContainerPort>
         <Protocol>tcp</Protocol>
@@ -28,12 +29,13 @@
   </Networking>
   <Environment>
     <Variable>
-      <Name>url</Name>
+      <Name>URL</Name>
       <Value>http://localhost:2368</Value>
     </Variable>
   </Environment>
   <Data>
     <Volume>
+      <Name>Ghost Appdata</Name>
       <HostDir>/mnt/user/appdata/ghost</HostDir>
       <ContainerDir>/var/lib/ghost/content</ContainerDir>
       <Mode>rw</Mode>
