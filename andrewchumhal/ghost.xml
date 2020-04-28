@@ -28,7 +28,7 @@
     </Networking>
 <Environment>
     <Variable>
-      <Value></Value>
+      <Value>http://localhost:2368</Value>
       <Name>url</Name>
       <Mode/>
     </Variable>
@@ -40,7 +40,7 @@
             <Mode>rw</Mode>
         </Volume>
     </Data>
-    <WebUI/>
+    <WebUI>http://[IP]:[PORT:2368]</WebUI>
     <Icon>https://raw.githubusercontent.com/andrewchumchal/docker-templates/master/images/Ghost.png</Icon>
     <Config Name="Appdata Location" Target="/var/lib/ghost/content" Default="/mnt/user/appdata/ghost" Mode="rw" Description="Container Path: /var/lib/ghost" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/ghost</Config>
     <Config Name="Web" Target="2368" Default="2368" Mode="tcp" Description="Web port for Ghost" Type="Port" Display="advanced" Required="true" Mask="false">2368</Config>
